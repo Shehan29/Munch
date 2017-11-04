@@ -217,11 +217,19 @@ var HomePage = (function () {
             console.log('error', error);
         });
     };
+    HomePage.prototype.takePicture = function () {
+        var pictureOpts = {
+            width: 1280,
+            height: 1280,
+            quality: 85
+        };
+        this.cameraPreview.takePicture(pictureOpts);
+    };
     return HomePage;
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\aravi\Documents\Aravind\ECHacks\Munch\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-fab right top>\n\n      <button ion-fab color="secondary" (click)="changeEffect()">\n\n        <ion-icon name="md-color-wand"></ion-icon>\n\n      </button>\n\n  </ion-fab>\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="primary" (click)="takePicture()">\n\n       <ion-icon name="md-camera"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\aravi\Documents\Aravind\ECHacks\Munch\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\aravi\Documents\Aravind\ECHacks\Munch\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-fab right bottom>\n\n    <button ion-fab color="primary" (click)="takePicture()">\n\n       <ion-icon name="md-camera"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\aravi\Documents\Aravind\ECHacks\Munch\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ToastController */],

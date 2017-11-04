@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController, ToastController} from 'ionic-angular';
 import { Diagnostic } from '@ionic-native/diagnostic';
-import {CameraPreview, CameraPreviewOptions} from "@ionic-native/camera-preview";
+import {CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions} from "@ionic-native/camera-preview";
 
 
 @Component({
@@ -60,6 +60,14 @@ export class HomePage {
 
         })
 
+    }
+    takePicture(){
+        const pictureOpts: CameraPreviewPictureOptions = {
+            width: 1280,
+            height: 1280,
+            quality: 85
+        }
+        this.cameraPreview.takePicture(pictureOpts)
     }
 
 }
