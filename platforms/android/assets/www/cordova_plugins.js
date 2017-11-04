@@ -24,6 +24,22 @@ module.exports = [
     "clobbers": [
       "navigator.splashscreen"
     ]
+  },
+  {
+    "id": "cordova-plugin-camera-preview.CameraPreview",
+    "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
+    "pluginId": "cordova-plugin-camera-preview",
+    "clobbers": [
+      "CameraPreview"
+    ]
+  },
+  {
+    "id": "cordova.plugins.diagnostic.Diagnostic",
+    "file": "plugins/cordova.plugins.diagnostic/www/android/diagnostic.js",
+    "pluginId": "cordova.plugins.diagnostic",
+    "clobbers": [
+      "cordova.plugins.diagnostic"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -33,7 +49,9 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.3.1",
   "cordova-plugin-device": "1.1.4",
   "cordova-plugin-splashscreen": "4.0.3",
-  "cordova-plugin-ionic-webview": "1.1.16"
+  "cordova-plugin-ionic-webview": "1.1.16",
+  "cordova-plugin-camera-preview": "0.9.0",
+  "cordova.plugins.diagnostic": "3.7.1"
 };
 // BOTTOM OF METADATA
 });

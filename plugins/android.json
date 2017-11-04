@@ -21,6 +21,12 @@
     },
     "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-camera-preview": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {}
