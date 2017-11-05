@@ -1,13 +1,17 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Munch</ion-title>
-  </ion-navbar>
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/logo.png">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-header color="dark">
+<ion-navbar text-align="center" color="dark" class="bar bar-header">
+<img src="assets/logo.png" width="123" height="33" style = "left:50%; position:absolute; transform:translateX(-50%); margin-top: -3%" />
+</ion-navbar>
 </ion-header>
 
-<ion-content padding (click) = "takePicture()">
-  <ion-fab right bottom>
-    <button ion-fab color="primary">
-       <ion-icon name="md-camera"></ion-icon>
-    </button>
-  </ion-fab>
+<ion-content class="background-color-transparent" padding (click) = "takePicture()">
+
 </ion-content>

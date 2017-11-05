@@ -14,6 +14,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import {CameraPreview, CameraPreviewOptions} from "@ionic-native/camera-preview";
+import {AndroidFullScreen} from '@ionic-native/android-full-screen'
+import {NutrientsPage} from "../pages/nutrients/nutrients";
+import { IonicStorageModule } from '@ionic/storage';
 //import {HTTP} from '@ionic-native/http';
 
 @NgModule({
@@ -23,12 +26,14 @@ import {CameraPreview, CameraPreviewOptions} from "@ionic-native/camera-preview"
     ContactPage,
     HomePage,
     TabsPage,
-    PopoverPage
+    PopoverPage,
+      NutrientsPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-      HttpModule
+      HttpModule,
+      IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,13 +42,15 @@ import {CameraPreview, CameraPreviewOptions} from "@ionic-native/camera-preview"
     ContactPage,
     HomePage,
     TabsPage,
-    PopoverPage
+    PopoverPage,
+      NutrientsPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Diagnostic,
     CameraPreview,
+      AndroidFullScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

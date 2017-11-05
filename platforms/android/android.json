@@ -39,6 +39,10 @@
             {
               "xml": "<feature name=\"CordovaHttpPlugin\"><param name=\"android-package\" value=\"com.synconset.cordovahttp.CordovaHttpPlugin\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"AndroidFullScreen\"><param name=\"android-package\" value=\"com.mesmotronic.plugins.FullScreenPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -123,6 +127,9 @@
       "PACKAGE_NAME": "io.ionic.starter"
     },
     "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-fullscreen": {
       "PACKAGE_NAME": "io.ionic.starter"
     }
   },
@@ -374,6 +381,14 @@
       "clobbers": [
         "cordova.plugin.http"
       ]
+    },
+    {
+      "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+      "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+      "pluginId": "cordova-plugin-fullscreen",
+      "clobbers": [
+        "AndroidFullScreen"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -385,6 +400,7 @@
     "cordova-plugin-camera-preview": "0.9.0",
     "cordova.plugins.diagnostic": "3.7.1",
     "cordova-plugin-file": "4.3.3",
-    "cordova-plugin-advanced-http": "1.7.1"
+    "cordova-plugin-advanced-http": "1.7.1",
+    "cordova-plugin-fullscreen": "1.1.0"
   }
 }

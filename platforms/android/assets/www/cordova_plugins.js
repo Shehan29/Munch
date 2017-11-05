@@ -246,6 +246,14 @@ module.exports = [
     "clobbers": [
       "cordova.plugin.http"
     ]
+  },
+  {
+    "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+    "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+    "pluginId": "cordova-plugin-fullscreen",
+    "clobbers": [
+      "AndroidFullScreen"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -259,7 +267,8 @@ module.exports.metadata =
   "cordova-plugin-camera-preview": "0.9.0",
   "cordova.plugins.diagnostic": "3.7.1",
   "cordova-plugin-file": "4.3.3",
-  "cordova-plugin-advanced-http": "1.7.1"
+  "cordova-plugin-advanced-http": "1.7.1",
+  "cordova-plugin-fullscreen": "1.1.0"
 };
 // BOTTOM OF METADATA
 });

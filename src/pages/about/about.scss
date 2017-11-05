@@ -1,3 +1,15 @@
-page-about {
+.ios, .md {
+
+  page-about {
+
+    .scroll-content {
+      background-color: #ffffff;
+    }
+
+    ion-card-header {
+      font-weight: bold;
+    }
+
+  }
 
 }

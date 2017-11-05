@@ -3,24 +3,37 @@ import {NavController, ToastController, PopoverController, PopoverOptions, Loadi
 import { Diagnostic } from '@ionic-native/diagnostic';
 import {CameraPreview, CameraPreviewOptions, CameraPreviewPictureOptions} from "@ionic-native/camera-preview";
 //import {HTTP} from '@ionic-native/http';
-import { Http , RequestOptions} from '@angular/http';
+import { Http , RequestOptions, Headers} from '@angular/http';
 import {PopoverPage} from '../popover/popover'
-
+import {AndroidFullScreen} from '@ionic-native/android-full-screen'
+import {NutrientsPage} from "../nutrients/nutrients";
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
+    splash = true;
+    tabBarElement: any
     constructor(public navCtrl: NavController,
                 public toastCtrl: ToastController,
                 public popOverCtrl: PopoverController,
                 public diagnostic:Diagnostic,
                 public cameraPreview: CameraPreview,
                 public http: Http,
-                public loadingCtrl: LoadingController) {
+                public loadingCtrl: LoadingController,
+                public androidFullScreen: AndroidFullScreen) {
+        this.tabBarElement = document.querySelector('.tabbar');
         this.http = http
+        this.androidFullScreen.isImmersiveModeSupported().then(() => this.androidFullScreen.immersiveMode())
+            .catch((error:any) => console.log(error));
         this.initializePreview()
-
+    }
+    ionViewDidLoad() {
+        this.tabBarElement.style.display = 'none';
+        setTimeout(() => {
+            this.splash = false
+            this.tabBarElement.style.display = 'flex';
+        }, 4000)
     }
     checkPermissions(){
         this.diagnostic.isCameraAuthorized().then((authorized) =>{
@@ -45,8 +58,8 @@ export class HomePage {
         let previewRect: CameraPreviewOptions = {
             x: 0,
             y: 0,
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: window.outerWidth,
+            height: window.outerHeight,
             camera: 'rear',
             tapPhoto: true,
             previewDrag: true,
@@ -70,16 +83,14 @@ export class HomePage {
         this.cameraPreview.takePicture(pictureOpts).then((imageData) => {
           // var link = "http://172.25.150.65:3000/"
           // var link = "http://192.168.11.119:3000/"
-            this.cameraPreview.setColorEffect('negative')
             let loading = this.loadingCtrl.create({
                 spinner: 'dots',
-                content: 'Loading Please Wait...',
-                cssClass: 'loading-wrapper',
-                showBackdrop: false
+                content: 'Loading Please Wait...'
             });
             loading.present()
-            var link = "http://192.168.137.9:3000/recognize"
-            var myData = {img: encodeURIComponent(imageData.toString('base64'))}
+            var link = "http://192.168.137.70:3000/recognize"
+            var myData = {"img": encodeURIComponent(imageData.toString('base64'))}
+            //let options =new RequestOptions({body: myData});
             this.http.post(link, myData).subscribe(data => {
                 console.log("Entered")
                 console.log(data)
